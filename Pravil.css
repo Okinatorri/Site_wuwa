@@ -1,0 +1,313 @@
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+
+.gradient-text2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  position: relative;
+  top: 50px;
+  background: linear-gradient(to right, #FCB045 24%, #FF3F78 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+.white-text2 {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  position: relative;
+  color: white; /* Белый текст */
+  align-items: center; /* Центрирует каждую строку под первой */
+  top: 15px;
+  width: 200px;
+  height: 55px;
+  left: 35px;
+}
+
+.white-text22 {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 100;
+  font-size: 40px;
+  position: relative;
+  color: white; /* Белый текст */
+  align-items: center; /* Центрирует каждую строку под первой */
+  top: 60px;
+  left: 35px;
+  width: 200px;
+  height: 55px;
+
+}
+
+.cifr{
+  position: relative;
+  color: gray; /* Белый текст */
+}
+
+.gradient-text3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  position: relative;
+  top: -50px;
+background: linear-gradient(to right, #C8772E 24%, #B72F5F 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gena {
+    position: absolute;
+    top: 0px;
+    right: -220px;
+    width: 150%;
+    height: 136px; /* Обратите внимание на единицы измерения */
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+
+
+
+.gradient-text2, .white-text2, .cifr, .gradient-text3 {
+    position: relative;
+    z-index: 1; /* Тексты будут сверху картинки */
+}
+
+
+
+
+
+/* Контейнер для заголовков */
+.text-container {
+    position: relative; /* Чтобы позиционировать заголовки относительно этого контейнера */
+    width: 100%;
+    height: 100px; /* Фиксированная высота, чтобы другие элементы не поднимались */
+    text-align: center; /* Центрируем текст */
+}
+
+/* Заголовки */
+.white-text2, .white-text22 {
+    position: absolute;
+    white-space: nowrap; /* Запрещает перенос текста */
+    color: white;
+}
+
+
+
+
+
+
+.intro {
+    margin-top: 50px; /* Отступ сверху, чтобы сдвинуть все вниз */
+
+}
+
+
+/* Расположение заголовков */
+
+nav {
+  overflow: hidden;
+}
+
+.intro {
+  overflow: hidden;
+}
+
+.centered-links1 {
+  overflow: hidden;
+}
+
+
+.logo {
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+
+  top: 5px;
+  right: 300px;
+  width: 239px;
+  height: 79px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 54px;
+  color: #970020; /* Красный цвет текста */
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+
+}
+
+
+.logo2 {
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+
+  top: 55px;
+  right: 340px;
+  width: 239px;
+  height: 79px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: white; /* Красный цвет текста */
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+
+}
+
+.twich {
+    position: absolute;
+    top: 13px;
+  right: 535px;
+    width: 52px;
+    height: 50px; /* Обратите внимание на единицы измерения */
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+.tg {
+    position: absolute;
+    top: 35px;
+  right: 50px;
+    width: 42px;
+    height: 40px; /* Обратите внимание на единицы измерения */
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+.you {
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+
+  top: 30px;
+  right: 70px;
+  width: 239px;
+  height: 79px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #00AFF1; /* Красный цвет текста */
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+
+}
+
+
+.you2 {
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+
+  top: 40px;
+  right: 70px;
+  width: 239px;
+  height: 79px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: white; /* Красный цвет текста */
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+}
+
+.you1 {
+
+  color: #00AFF1; /* Красный цвет текста */
+
+}
+@font-face {
+    font-family: 'Trajan Pro 3';
+    src: url('shrifts/Trajan Pro 3 Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.pravila{
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+  font-family: "Trajan Pro 3", sans-serif;
+  font-weight: regular;
+  font-size: 65px;
+  top: 173px;
+  width: 339px;
+  height: 279px;
+  color: white;
+}
+
+
+
+
+
+
+
+.login-box2345{
+
+
+    position: absolute; /* Или relative, если нужно внутри другого блока */
+    top:260px;
+    width:400px;
+    height:70px;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 4px solid white;
+
+}
+
+
+.login-box_right{
+
+
+    position: absolute; /* Или relative, если нужно внутри другого блока */
+    top:180px;
+    width:60vh;
+    height:80vh;
+    right:60px;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 4px solid white;
+
+}
+
+
+
+.login-box_left{
+    position: absolute; /* Или relative, если нужно внутри другого блока */
+    top:180px;
+    width:60vh;
+    height:80vh;
+    left:60px;
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 4px solid white;
+
+}
+
+

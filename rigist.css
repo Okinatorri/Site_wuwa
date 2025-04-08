@@ -1,0 +1,283 @@
+
+/* Сброс отступов и установка базовых стилей для всего документа */
+html, body {
+  margin: 0;               /* Убираем стандартные отступы браузера */
+  padding: 0;              /* Убираем стандартные отступы браузера */
+  height: 100%;            /* Задаём высоту в 100% для html и body, чтобы можно было работать с 100% высотой окна */
+  overflow-x: hidden;      /* Отключаем горизонтальную прокрутку */
+  font-family: 'Montserrat', sans-serif; /* Задаём основной шрифт для документа */
+}
+
+.white-text21 {
+  position: relative;
+  color: white; /* Белый текст */
+
+}
+
+.gradient-text41 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  position: relative;
+  top: 150px;
+  background: linear-gradient(to right, #FCB045 24%, #FF3F78 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text412 {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  position: relative;
+  top: 200px;
+  background: linear-gradient(to right, #FCB045 24%, #FF3F78 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+
+.buut {
+
+  position: relative;
+  top: 550px;
+
+
+}
+
+
+/* From Uiverse.io by mrhyddenn */
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 180px;
+    top: 350px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #FCB045;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #FCB045, #FF3F78);
+  border-image-slice: 1;
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #FCB045;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+
+.login-box {
+  position: absolute;
+  top: 900px;
+  left: 49%;
+  width: 300px;
+  height:200px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 2px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.submit-btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  border: 2px solid #ffffff;
+  overflow: hidden;
+  transition: .3s ease-in-out;
+  margin-top: 0px;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #02026b; /* Темно-синий фон */
+  color: #ddd; /* Чуть затемненный белый */
+  border-color: #02026b; /* Тоже затемняем */
+  box-shadow: 0 0 5px #02026b,
+              0 0 7px hwb(234 1%   5%),
+              0 0 10px hsl(239, 50%, 48%),
+              0 0 15px hsl(216, 50%, 48%);
+}
+}
+
+
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0327f4);
+  animation: btn-anim1 2s linear infinite;
+}
+
+
+
+
+.text4 {
+    font-size: 130px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+        margin-left: -40px; /* Сдвиг всей строки вправо */
+
+}
+
+
+
+@font-face {
+    font-family: 'Trajan Pro 3';
+    src: url('shrifts/Trajan Pro 3 Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.regg {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: 400;
+   font-size: 75px;
+   position: relative;
+      user-select: none;
+   color: white;
+   top: 70px;
+      margin: 20px 0;
+     text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+}
+
+
+.redd2 {
+     font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: 400;
+   font-size: 75px;
+   position: relative;
+      user-select: none;
+   color: white;
+   top: 50px;
+      margin: 20px 0;
+     text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+}
+
+
+
+
+.logoMM {
+  position: absolute;
+
+  width: 500px;
+  select: none;
+  bottom: -200px;
+  right: -80px;
+
+  }

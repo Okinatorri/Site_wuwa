@@ -1,0 +1,14 @@
+
+
+
+.taplooo {
+
+
+    position: absolute; /* Или relative, если нужно внутри другого блока */
+
+    width:1700px;
+    height:800px;
+    right:60px;
+    top:180px;
+    left:100px;
+}

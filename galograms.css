@@ -1,0 +1,28 @@
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-block {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .video-block video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }

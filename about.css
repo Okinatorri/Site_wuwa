@@ -1,0 +1,817 @@
+/* Сброс отступов и установка базовых стилей для всего документа */
+html, body {
+  margin: 0;               /* Убираем стандартные отступы браузера */
+  padding: 0;              /* Убираем стандартные отступы браузера */
+  height: 100%;            /* Задаём высоту в 100% для html и body, чтобы можно было работать с 100% высотой окна */
+  overflow-x: hidden;      /* Отключаем горизонтальную прокрутку */
+  font-family: 'Montserrat', sans-serif; /* Задаём основной шрифт для документа */
+}
+
+/* Стили для фонового изображения */
+.bg {
+  position: fixed;         /* Фиксируем позицию, чтобы изображение оставалось на месте при прокрутке */
+  top: 0;                  /* Располагаем сверху */
+  left: 0;                 /* Располагаем слева */
+  width: 100%;             /* Ширина изображения равна 100% ширины окна */
+  height: 100%;            /* Высота изображения равна 100% высоты окна */
+  object-fit: cover;       /* Изображение масштабируется так, чтобы заполнить весь контейнер, сохраняя пропорции */
+  z-index: -1;             /* Устанавливаем отрицательный индекс, чтобы изображение располагалось за другим содержимым */
+}
+
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+
+/* Контейнер для основного содержимого, центрирует его по вертикали и горизонтали */
+.intro {
+  display: flex;                  /* Используем Flexbox для центрирования элементов */
+  flex-direction: column;         /* Располагаем элементы по вертикали */
+  /*justify-content: center;        /* Центрируем элементы по вертикали */
+  align-items: center;            /* Центрируем элементы по горизонтали */
+  height: 100vh;                  /* Высота контейнера равна 100% высоты окна браузера */
+  background-color: transparent;  /* Фоновый цвет прозрачный, чтобы видно было фоновое изображение */
+  text-align: center;             /* Центрируем текст внутри контейнера */
+  overflow-y: auto;               /* Если содержимого много, появляется вертикальная прокрутка */
+}
+
+/* Стили для заголовка (.turik) */
+.turik {
+  font-family: "Inter", sans-serif;       /* Устанавливаем шрифт для заголовка */
+   position: relative;
+  font-weight: 900;                         /* Устанавливаем жирность шрифта */
+  font-size: 64px;                          /* Размер шрифта */
+  background: linear-gradient(to right, #FCB045 24%, #FF3F78 100%);  /* Градиентный фон, который будет применён к тексту */
+  -webkit-background-clip: text;            /* Обрезаем фон по контуру текста (для браузеров на базе WebKit) */
+  color: transparent;                       /* Делаем текст прозрачным, чтобы был виден только градиент */
+  top: 100px;
+    /* Сдвиг справа left: 698px; /* Сдвиг справа */
+  margin: 20px 0;                           /* Задаём вертикальные отступы вокруг заголовка */
+}
+.turik_nam {
+  font-family: "Inter", sans-serif;       /* Устанавливаем шрифт для заголовка */
+   position: absolute;
+  font-weight: 700;                         /* Устанавливаем жирность шрифта */
+  font-size: 36px;                          /* Размер шрифта */
+  background: linear-gradient(to right, #FCB045 24%, #FF3F78 100%);  /* Градиентный фон, который будет применён к тексту */
+  -webkit-background-clip: text;            /* Обрезаем фон по контуру текста (для браузеров на базе WebKit) */
+  color: transparent;                       /* Делаем текст прозрачным, чтобы был виден только градиент */
+  top: 870px;
+right: 100px;
+left: auto;
+
+    /* Сдвиг справа left: 698px; /* Сдвиг справа */
+                         /* Задаём вертикальные отступы вокруг заголовка */
+}
+
+/* Стили для параграфа (.ddd) */
+.ddd {
+  font-family: "Inconsolata", sans-serif;       /* Устанавливаем шрифт для заголовка */
+   position: absolute;
+   width: 200px; /* Ширина контейнера */
+  font-weight: 500;                         /* Устанавливаем жирность шрифта */
+  font-size: 32px;                          /* Размер шрифта */
+  color: white;  /* Градиентный фон, который будет применён к тексту */                      /* Делаем текст прозрачным, чтобы был виден только градиент */
+  top: -10px;
+  left: 34px; /* Расположение справа */
+    /* Сдвиг справа left: 698px; /* Сдвиг справа */
+  margin: 20px 0;          /* Вертикальные отступы сверху и снизу */
+}
+
+/* Настройка полосы прокрутки для WebKit-браузеров (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;            /* Ширина полосы прокрутки */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000; /* Цвет фона полосы прокрутки (трек) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Цвет ползунка */
+  border-radius: 6px;     /* Скругление углов ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Цвет ползунка при наведении курсора */
+}
+
+/* Настройка полосы прокрутки для Firefox */
+html {
+  scrollbar-color: #333 #000; /* Цвет ползунка и трека соответственно */
+  scrollbar-width: thin;      /* Устанавливаем тонкую полосу прокрутки */
+}
+
+
+
+
+.centered-links {
+    z-index: 16; /* Убедитесь, что ссылки выше других элементов */
+    position: relative; /* Установите относительное позиционирование, чтобы z-index работал */
+    position: relative;
+    top: 25px; /* Сдвигает блок вниз */
+
+}
+
+
+
+
+/* Основной стиль для всего навигационного меню */
+/* Основной стиль для всего навигационного меню */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  top: 50px;
+}
+
+nav li {
+  margin-right: 10px; /* Устанавливаем одинаковые отступы между всеми элементами */
+
+}
+
+nav li:last-child {
+  margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+/* Стиль для ссылок */
+nav li a {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  top: 50px;
+}
+
+
+/* Убираем фон у сервиса при наведении */
+.select a {
+  background-color: transparent;
+}
+
+nav li a:hover {
+  background-color: transparent; /* Убираем серый фон при наведении на обычные ссылки */
+}
+
+/* Стиль для выпадающего меню (Сервисы) */
+.select {
+  position: relative;
+  cursor: pointer;
+  margin-left: -20px; /* Сдвигаем блок немного влево */
+}
+
+.select a {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  padding: 5px 10px;
+  left: -500;
+  border-radius: 5px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+
+}
+
+/* Выпадающий список */
+.options {
+  display: none; /* Скрыто по умолчанию */
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: -0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: #1e2329; /* Темный фон */
+  border-radius: 15px;
+  padding: 5px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+  width: 150%; /* Расширяем список на всю ширину родительского элемента */
+  border: 2px solid #333; /* Обводка вокруг серого блока */
+}
+
+.select:hover .options {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+   transform: translateX(-20px); /* Сдвигаем вкладку еще дальше при наведении */
+
+}
+
+/* Стили для вариантов в выпадающем меню */
+.options a {
+  padding: 20px;
+  background-color: #1e2329; /* Темный фон */
+  color: white;
+  font-size: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: block;
+
+}
+
+/* Серый фон только при наведении на элементы в выпадающем меню */
+.options a:hover {
+  background-color: #333840; /* Немного светлее серого */
+}
+.text-content {
+    position: relative;
+    padding-left: 30px; /* Отступ слева *//* Убедитесь, что текст позиционирован относительно контейнера */
+    z-index: 3; /* Убедитесь, что текст выше стеклянного эффекта */
+    padding: 20px; /* Добавьте немного отступа, если нужно */
+}
+
+nav a {
+    color: #000; /* Начальный цвет текста */
+    text-decoration: none; /* Убираем стандартное подчеркивание */
+    transition: transform 0.3s ease, color 0.3s ease; /* Плавный переход */
+}
+
+nav a:hover {
+    color: #FF3F78; /* Цвет текста при наведении */
+    transform: scale(1.1); /* Увеличение текста при наведении */
+}
+
+nav {
+  overflow: hidden;
+}
+
+
+
+
+
+.prizzz {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  position: relative;
+  top: 300px;
+  left: -200px;
+  margin: 20px 0;
+}
+
+.white-text {
+  color: white; /* Белый текст */
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff0000 24%, #57b5fe 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.karlotta {
+
+    position: absolute; /* Абсолютное позиционирование относительно .heder_iner */
+    top: 324px; /* Отступ сверху от контейнера */
+    left: -33px; /* Сдвиг справа */
+    width: 375px; /* Ширина логотипа */
+    height: 667; /* Автоматическая высота для сохранения пропорций */
+    user-select: none
+    z-index: 1; /* Картинка под размытием */
+}
+.inlin {
+
+    position: absolute; /* Абсолютное позиционирование относительно .heder_iner */
+    top: 2px; /* Отступ сверху от контейнера */
+    right: -220px; /* Сдвиг справа */
+    width: 875px; /* Ширина логотипа */
+    height: 1067; /* Автоматическая высота для сохранения пропорций */
+    user-select: none
+    z-index: 1; /* Картинка под размытием */
+}
+
+
+
+@font-face {
+    font-family: 'Duo Quadruple';
+    src: url('shrifts/Duo-quadruple_by_hanbikov_ilyas.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.whitt {
+   font-family: 'Duo Quadruple', sans-serif;
+   font-weight: 400;
+   font-size: 200px;
+   position: relative;
+   color: white;
+   top: 120px;
+   left: 0%;
+   margin: 20px 0;
+      user-select: none;
+
+          text-shadow:
+      1px 1px 3px black,    /* Тень вправо и вниз */
+      -1px -1px 3px black,  /* Тень влево и вверх */
+      1px -1px 3px black,   /* Тень вправо и вверх */
+      -1px 1px 3px black;   /* Тень влево и вниз */
+
+}
+
+@font-face {
+    font-family: 'Trajan Pro 3';
+    src: url('shrifts/Trajan Pro 3 Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.whitt2 {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 50px;
+   position: relative;
+      user-select: none;
+   color: white;
+   top: -180px;
+   transform: translateX(-10%);  /* Сдвиг на 50% от ширины элемента */
+
+   margin: 20px 0;
+
+
+
+      text-shadow:
+      2px 2px 3px black,    /* Тень вправо и вниз */
+      -2px -2px 3px black,  /* Тень влево и вверх */
+      2px -2px 3px black,   /* Тень вправо и вверх */
+      -2px 2px 3px black;   /* Тень влево и вниз */
+}
+
+
+
+.redd {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+
+   background: linear-gradient(to right, #ff0000 24%, #57b5fe 100%);
+   -webkit-background-clip: text;
+   color: transparent;
+
+   font-size: 50px;
+   position: relative;
+
+   top: -280px;
+   transform: translateX(250%);  /* Сдвиг на 50% от ширины элемента */
+
+   margin: 20px 0;
+
+   /* Позиционирование текста вперед */
+   z-index: 1; /* Обеспечиваем, что текст на переднем плане */
+
+   /* Убираем тени, чтобы они не перекрывали градиент */
+   text-shadow: none;
+}
+
+/* Псевдоэлемент для теней */
+.redd::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1; /* Ставим тени за текст */
+   color: transparent;
+   background: linear-gradient(to right, #ff0000 24%, #57b5fe 100%);
+   -webkit-background-clip: text;
+   text-shadow:
+      2px 2px 3px black,    /* Тень вправо и вниз */
+      -2px -2px 3px black,  /* Тень влево и вверх */
+      2px -2px 3px black,   /* Тень вправо и вверх */
+      -2px 2px 3px black;   /* Тень влево и вниз */
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 50px;
+   transform: translateX(250%);  /* Сдвиг на 50% от ширины элемента */
+}
+
+
+
+
+
+
+.miroichi {
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+
+  top: 435px;
+   transform: translateX(12.5%);  /* Сдвиг на 50% от ширины элемента */
+
+  width: 239px;
+  height: 79px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: #970020; /* Красный цвет текста */
+
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+
+}
+
+
+.ne_miroichi {
+  position: absolute; /* Или relative, если нужно внутри другого блока */
+
+  top: 490px;
+   transform: translateX(-15%);  /* Сдвиг на 50% от ширины элемента */
+
+  width: 239px;
+  height: 79px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  color: white; /* Красный цвет текста */
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+
+}
+
+
+
+
+.twich1 {
+    position: absolute;
+    top: 443px;
+   transform: translateX(-29%);  /* Сдвиг на 50% от ширины элемента */
+    width: 62px;
+    height: 60px; /* Обратите внимание на единицы измерения */
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+.text {
+
+}
+.white {
+    font-family: "Impact", sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    position: absolute;
+    top: -140px;
+    left: -50px; /* Сдвиг влево/вправо */
+    width: 62px;
+    height: 60px;
+    z-index: 1;
+    pointer-events: none;
+
+    background: linear-gradient(to right, #FF0000, #57B5FE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        position: relative;
+
+}
+
+/* Черная обводка */
+.white::before {
+    content: "&"; /* Дублируем текст */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    font-size: 60px;
+    font-weight: 400;
+    color: black;
+    -webkit-text-fill-color: black;
+    -webkit-background-clip: unset;
+
+    text-shadow:
+        -2px -2px 0 black,
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+}
+
+.red-white {
+    font-family: "Impact", sans-serif;
+    font-weight: 400;
+    font-size: 70px;
+    position: absolute;
+    top: -140px;
+    left: 50px; /* Сдвиг влево/вправо */
+    width: 62px;
+    height: 60px;
+    user-select: none;
+    z-index: 1;
+
+
+    background: linear-gradient(to bottom right, #57b5fe, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+
+}
+
+/* Черная обводка */
+.red-white::before {
+    content: "Maliwan"; /* Дублируем текст */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    font-size: 70px;
+    font-weight: 400;
+    color: black;
+    -webkit-text-fill-color: black;
+    -webkit-background-clip: unset;
+
+    text-shadow:
+        -2px -2px 0 black,
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+}
+
+
+
+
+@font-face {
+    font-family: 'ofont_ru_Impact';
+    src: url('shrifts/ofont.ru_Impact.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.blue-white {
+    font-family: "ofont_ru_Impact", sans-serif;
+    font-weight: regular; /* Жирный текст (можно убрать) */
+    font-size: 70px;
+    position: absolute;
+    top: -140px;
+    left: -20px; /* Сдвигаем текст влево */
+    width: 92px;
+    height: 60px;
+    user-select: none;
+    z-index: 1;
+
+
+    background: linear-gradient(to bottom right, #FF0000, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    position: relative;
+}
+
+/* Черная обводка */
+.blue-white::before {
+    content: "Miroichii"; /* Дублируем текст */
+    position: absolute;
+    top: 0;
+    left: 0; /* Должно совпадать с основным текстом */
+    z-index: -1;
+
+    font-size: 70px;
+    font-weight: 400;
+    color: black;
+    -webkit-text-fill-color: black;
+    -webkit-background-clip: unset;
+
+    text-shadow:
+        -2px -2px 0 black,
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+}
+
+.lolPr {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 35px;
+   position: fixed;
+   bottom: 3px;
+   left: 50%;
+   transform: translateX(-200%);
+   color: white; /* Белый цвет для обычного текста */
+   width: 400px;
+   height: 55px;
+   display: flex;
+   align-items: center;
+   gap: 5px; /* Расстояние между частями текста */
+
+   /* Убираем тени, чтобы они не перекрывали градиент */
+}
+.lolPr::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1; /* Ставим тени за текст */
+   color: transparent;
+   background: linear-gradient(to right, #ff0000 24%, #57b5fe 100%);
+   -webkit-background-clip: text;
+   text-shadow:
+      1px 1px 3px black,    /* Тень вправо и вниз */
+      -1px -1px 3px black,  /* Тень влево и вверх */
+      1px -1px 3px black,   /* Тень вправо и вверх */
+      -1px 1px 3px black;   /* Тень влево и вниз */
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 50px;
+   transform: translateX(250%);  /* Сдвиг на 50% от ширины элемента */
+}
+
+
+.lolPr2 {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 35px;
+   position: fixed;
+   bottom: 3px;
+   left: 50%;
+   transform: translateX(100%);
+   color: white; /* Белый цвет для обычного текста */
+   width: 400px;
+   height: 55px;
+   display: flex;
+   align-items: center;
+   gap: 5px; /* Расстояние между частями текста */
+}
+
+.lolPr2::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1; /* Ставим тени за текст */
+   color: transparent;
+   background: linear-gradient(to right, #ff0000 24%, #57b5fe 100%);
+   -webkit-background-clip: text;
+   text-shadow:
+      1px 1px 3px black,    /* Тень вправо и вниз */
+      -1px -1px 3px black,  /* Тень влево и вверх */
+      1px -1px 3px black,   /* Тень вправо и вверх */
+      -1px 1px 3px black;   /* Тень влево и вниз */
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 50px;
+   transform: translateX(250%);  /* Сдвиг на 50% от ширины элемента */
+}
+
+/* Градиент для числа */
+.gradient-text {
+   background: linear-gradient(to bottom, #FF0000, #57b5fe);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+
+.lolPr3 {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 35px;
+   position: fixed;  /* Фиксируем текст на экране */
+   bottom: -5px;  /* Отступ от нижнего края */
+   left: 50%;  /* Размещаем по центру */
+   transform: translateX(-50%);  /* Сдвигаем влево на половину ширины */
+   color: white; /* Белый текст */
+   width: 400px;
+   height: 55px;
+}
+.gradient-text {
+   background: linear-gradient(to bottom, #FF0000, #57b5fe);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.lolPr3::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1; /* Ставим тени за текст */
+   color: transparent;
+   background: linear-gradient(to right, #ff0000 24%, #57b5fe 100%);
+   -webkit-background-clip: text;
+   text-shadow:
+      1px 1px 3px black,    /* Тень вправо и вниз */
+      -1px -1px 3px black,  /* Тень влево и вверх */
+      1px -1px 3px black,   /* Тень вправо и вверх */
+      -1px 1px 3px black;   /* Тень влево и вниз */
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: regular;
+   font-size: 50px;
+   transform: translateX(250%);  /* Сдвиг на 50% от ширины элемента */
+}
+
+
+
+@font-face {
+    font-family: 'AGaramondPro-Regular';
+    src: url('shrifts/AGaramondPro-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.centered-links1 nav ul li a {
+    font-family: "AGaramondPro-Regular", sans-serif; /* Замени на нужный шрифт */
+    font-size: 26px; /* Размер шрифта */
+    font-weight: regular; /* Жирный текст (можно убрать) */
+    top: 50px;
+
+}
+
+
+
+@font-face {
+    font-family: 'AGaramondPro-Regular';
+    src: url('shrifts/AGaramondPro-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.white-text2  {
+    font-family: "AGaramondPro-Regular", sans-serif; /* Замени на нужный шрифт */
+    font-size: 35px; /* Размер шрифта */
+    font-weight: regular; /* Жирный текст (можно убрать) */
+    top: 5px;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'AGaramondPro-Regular';
+    src: url('shrifts/AGaramondPro-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.white-text22  {
+    font-family: "AGaramondPro-Regular", sans-serif; /* Замени на нужный шрифт */
+    font-size: 35px; /* Размер шрифта */
+    font-weight: regular; /* Жирный текст (можно убрать) */
+    top: 40px;
+
+
+}
+
+
+.intro {
+
+    margin-top: 0px;
+
+
+}
+
+
+.panelll {
+    margin-top: 30px; /* Или больше, если нужно */
+}
+
+
+
+.gena {
+
+    height: 100px;
+
+
+}
+
+
+.you {
+    top: 20px;
+}
+
+.you2 {
+    top: 30px;
+}
+.tg {
+    top: 30px;
+}

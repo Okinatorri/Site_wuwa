@@ -1,0 +1,470 @@
+
+@font-face {
+    font-family: 'Trajan Pro 3';
+    src: url('shrifts/Trajan Pro 3 Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bans {
+   font-family: 'Trajan Pro 3', sans-serif;
+   font-weight: 400;
+   font-size: 55px;
+   position: relative;
+      user-select: none;
+      transform: translateY(3 0px);
+   color: white;
+   top: 5px;
+   left: -10px;
+      margin: 30px 0;
+     text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+}
+
+
+.bans_im {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 210px); /* Подстройка под центр экрана */
+    width: 100px;
+    height: 100px; /* Обратите внимание на единицы измерения */
+
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+
+
+
+
+.bans_im2{
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 290px); /* Подстройка под центр экрана */
+    width: 100px;
+    height: 100px; /* Обратите внимание на единицы измерения */
+
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+.bans_im22 {
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 190px); /* Подстройка под центр экрана */
+    width: 100px;
+    height: 100px; /* Обратите внимание на единицы измерения */
+    user-select: none;
+    z-index: -1; /* Картинка будет под текстом */
+    pointer-events: none; /* Чтобы не перекрывал клики */
+
+}
+
+
+
+.bans_im21 {
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 310px); /* Подстройка под центр экрана */
+
+    width: 100px;
+    height: 100px;
+    user-select: none;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#side2 {
+
+
+    right: 65px; /* Привязать к правому краю */
+
+}
+#side {
+
+
+    top: -180px;
+}
+
+.character2 {
+    width: 100%; /* Устанавливаем ширину изображения */
+    height: auto; /* Автоматическая высота */
+z-index: 1;
+}
+
+.character-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+
+
+
+.ban_img_1 {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 100px); /* Подстройка под центр экрана */
+    width: 100px;
+    height: 100px;
+}
+
+.ban_img_2 {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 236px); /* Подстройка под центр экрана */
+    width: 100px;
+    height: 100px;
+}
+
+.ban_img_3 {
+    position: absolute;
+    bottom: -5px;
+    left: calc(50% + 90px);
+    width: 130px;
+    height: 130px;
+}
+
+.image_dropdown_custom {
+    display: none;
+    position: absolute;
+    background: black;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 100;
+    max-width: 300px;
+    max-height: 200px; /* Ограничиваем высоту списка */
+    overflow-y: hidden; /* Добавляем прокрутку */
+    white-space: nowrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_img_custom {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow-y: hidden; /* Добавляем прокрутку */
+}
+
+.selected_bg_custom {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+.character {
+    width: 50px; /* Задаем ширину изображения */
+    height: 50px; /* Задаем высоту изображения */
+    background-size: cover; /* Чтобы изображение корректно масштабировалось в контейнере */
+    background-position: center; /* Центрируем изображение внутри контейнера */
+}
+/* Контейнеры с картинками 2, 3 и 4 для игрока 1 */
+#player1Container2, #player1Container3, #player1Container4 {
+    display: flex;            /* Flexbox для выравнивания элементов */
+    justify-content: space-between; /* Увеличиваем пространство между картинками */
+    gap: 20px;               /* Дополнительный отступ между картинками */
+}
+
+/* Аналогично для второго игрока */
+#player2Container2, #player2Container3, #player2Container4 {
+    display: flex;            /* Flexbox для выравнивания элементов */
+    justify-content: space-between; /* Увеличиваем пространство между картинками */
+    gap: 0px;               /* Дополнительный отступ между картинками */
+}
+
+#characters1, #characters2 {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы изображения располагались компактнее */
+    justify-content: flex-start;
+    gap: 20px; /* Уменьшаем расстояние */
+    left: 50px;
+}
+
+.character-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.intro {
+
+    overflow: hidden;
+}
+
+
+.side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%; /* Одинаковая ширина */
+}
+
+#side2 {
+    align-items: center; /* Делаем симметрично левому контейнеру */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Размер контейнера */
+    height: 80px;
+    margin: 5px;
+}
+
+
+.bans_im213 {
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    left: 50%;
+    top: 85px;
+    background-size: 70px 70px; /* Уменьшаем картинку на фоне */
+
+    transform: scale(0.7) translate(-743%, 43%); /* Уменьшаем и возвращаем */
+    transform-origin: center; /* Центрируем уменьшение */
+}
+
+
+.bans_im2134 {
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    right: 50%;
+    top: 85px;
+    background-size: 70px 70px; /* Уменьшаем картинку на фоне */
+
+    transform: scale(0.7) translate(700%, 43%); /* Уменьшаем и возвращаем */
+    transform-origin: center; /* Центрируем уменьшение */
+}
+
+
+
+#player1List {
+    top: 0px; /* Место, где будет открываться список для первого игрока */
+    left: 150px;
+}
+
+#player2List {
+    top: 0px; /* Место, где будет открываться список для первого игрока */
+    left: 650px;
+}
+
+
+.bans_niz {
+   font-family: 'Georgia', serif;
+   font-weight: 400;
+   font-size: 30px;
+   position: relative;
+      user-select: none;
+      transform: translateY(3 0px);
+   color: white;
+   top: -0px;
+   left: -120px;
+      margin: 30px 0;
+     text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+}
+
+.bans_niz2 {
+   font-family: 'Georgia', serif;
+   font-weight: 400;
+   font-size: 30px;
+   position: relative;
+      user-select: none;
+      transform: translateY(3 0px);
+   color: white;
+   top: -95px;
+   left: 150px;
+      margin: 30px 0;
+     text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+}
+
+
+
+
+
+
+
+html, body {
+    overflow: hidden !important;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+}
+/* Отключаем скролл для всех элементов */
+
+
+/* Стили для остальных элементов остаются без изменений */
+.character {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.character-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.ban-overlay {
+    position: absolute;
+    top: 9%;
+    left: 9%;
+    width: 82%;
+    height: 82%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.gray-overlay {
+    position: absolute;
+    top: 9%;
+    left: 9%;
+    width: 82%;
+    height: 82%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.values {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+    z-index: 15;
+    overflow: hidden;
+}
+
+.player-list {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #444;
+    max-height: 200px;
+    overflow-y: hidden; /* Заменяем auto на hidden */
+    z-index: 100;
+    display: none;
+}
+
+.player-list div {
+    padding: 8px 15px;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.player-list div:hover {
+    background: #444;
+}
+/* Убираем глобальное отключение скролла */
+/* * { overflow-y: hidden !important; } <- ЭТО УБИРАЕМ */
+ .square-container {
+        display: flex;
+        gap: 20px;
+        width: fit-content; /* Контейнер подстраивается под квадраты */
+        margin: 20px 0; /* Отступы, но без влияния на поток */
+    }
+
+    .square1, .square2, .square3, .square4 {
+        width: 35px;
+        height: 35px;
+        background-color: #664d00;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+        transition: all 0.3s;
+        border: 2px solid #000000;
+        flex-shrink: 0; /* Запрет сжатия */
+        display: flex;
+    }
+
+.square1.active, .square2.active, .square3.active, .square4.active {
+    background-color: #ffcc00;
+}
+
+
+.square1 {
+    position: absolute; /* Теперь top/left будут работать! */
+    top: 100px;
+    left: 190px; /* Пример */
+}
+
+.square2 {
+    position: absolute; /* Теперь top/left будут работать! */
+    top: 100px;
+    left: 230px; /* Пример */
+}
+
+.square3 {
+    position: absolute; /* Теперь top/left будут работать! */
+    top: 100px;
+    right: 210px; /* Пример */
+}
+
+.square4 {
+    position: absolute; /* Теперь top/left будут работать! */
+    top: 100px;
+    right: 250px; /* Пример */
+}

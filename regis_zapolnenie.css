@@ -1,0 +1,1860 @@
+.login-box {
+    position: fixed;   /* Фиксированное позиционирование */
+    top: 58%;          /* Центрирование по вертикали */
+    left: 20%;         /* Центрирование по горизонтали */
+    width: 561px;       /* 20% от ширины экрана */
+    height: 716px;      /* 20% от ширины экрана (для квадрата) */
+    padding: 5vw;      /* Для добавления отступов */
+    transform: translate(-50%, -50%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);  /* Черный полупрозрачный фон */
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 5px solid white;  /* Тонкая белая обводка */
+    overflow-y: auto; /* Прокрутка только по оси Y */
+    overflow-x: hidden; /* Отключаем прокрутку по оси X */
+
+}
+
+.login-box2 {
+    position: fixed;   /* Фиксированное позиционирование */
+    top: 58%;          /* Центрирование по вертикали */
+    right: 20%;         /* Центрирование по горизонтали */
+    width: 541px;       /* 20% от ширины экрана */
+    height: 716px;       /* 20% от ширины экрана (для квадрата) */
+    padding: 5vw;      /* Для добавления отступов */
+    transform: translate(50%, -50%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);  /* Черный полупрозрачный фон */
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 5px solid white;  /* Тонкая белая обводка */
+}
+
+.login-box23 {
+    position: fixed;
+    top: 21%;
+    left: 50%;         /* Центрирование по горизонтали */
+    width: 256px;
+    height: 48px;
+    transform: translate(-50%, -50%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 3px solid white;
+}
+
+
+.login-box234 {
+    position: fixed;
+    top: 45%;
+    left: 50%;         /* Центрирование по горизонтали */
+    width: 256px;
+    height: 248px;
+    transform: translate(-50%, -50%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 3px solid white;
+}
+
+.white-text_c3, .white-text_c4 {
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-size: 26px; /* Адаптивный размер текста */
+    color: white;
+    position: absolute; /* Меняем fixed → absolute */
+    text-align: center;
+    left: 50%; /* Центрируем */
+    transform: translate(-50%, 0);
+}
+
+.white-text_c3 {
+    top: calc(21% - 60px); /* Над .login-box23 */
+}
+
+.white-text_c4 {
+    top: calc(40% - 110px); /* Над .login-box234 */
+}
+
+
+.white-text_c, .white-text_c2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: clamp(26px, 4vw, 52px);
+    color: white;
+    position: absolute; /* Меняем fixed на absolute */
+    text-align: center;
+}
+
+.white-text_c {
+    left: 20%;
+    top: calc(58% - 420px); /* 58% высота login-box минус 420px */
+    transform: translate(-50%, 0); /* Сдвигаем без вертикального центрирования */
+}
+
+.white-text_c2 {
+    right: 20%;
+    top: calc(58% - 420px); /* Подгоняем аналогично */
+    transform: translate(50%, 0);
+}
+
+
+.logo11 {
+  position: absolute;
+  top: 94vh; /* 94% от высоты окна */
+  left: 52vw; /* 50% от ширины окна */
+  width: 10vw; /* 20% от ширины окна */
+  height: 3vh; /* 6% от высоты окна */
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 2vw; /* Размер шрифта адаптируется к ширине экрана */
+  color: #970020; /* Красный цвет текста */
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Черная обводка */
+
+  transform: translate(-50%, -50%); /* Центрируем */
+}
+
+.logo211 {
+  position: fixed;
+  top: 97.5vh; /* 98% от высоты окна */
+  left: 47vw; /* 50% от ширины окна */
+  width: 5vw;
+  height: 3vh;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 2vw;
+  color: white;
+
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+
+  transform: translate(-50%, -50%);
+}
+
+.twich2 {
+  position: absolute;
+  top: 94.5vh;
+  left: 45.5vw;
+  width: 2.5vw;
+  height: 4vh; /* Пропорциональные размеры */
+  user-select: none;
+  z-index: -1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.login-box-0 {
+    position: fixed;
+    top: 8%;
+    left: 10%;         /* Центрирование по горизонтали */
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 3px solid white;
+      overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  overflow: hidden; /* Чтобы ничего не выходило за пределы */
+
+}
+
+
+
+.white-text_c2-0 {
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    font-size: 96px; /* Адаптивный размер текста */
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+    position: absolute; /* Абсолютное позиционирование внутри родителя */
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    white-space: nowrap; /* Чтобы текст не переносился */
+    overflow: hidden; /* Чтобы ничего не выходило за пределы */
+    padding: 10px; /* Можно добавить отступы для красивого отображения */
+    border: none; /* Убираем обводки */
+}
+
+
+.login-box-02 {
+    position: fixed;
+    top: 8%;
+    left: 10%;         /* Центрирование по горизонтали */
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 3px solid white;
+      overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  pointer-events: none;  /* Этот элемент не будет блокировать клики на другие элементы */
+
+}
+
+.login-box-021 {
+    position: fixed;
+    bottom: 0%;
+    left: 25%;         /* Центрирование по горизонтали */
+    width: 50px;
+    height: 40px;
+    transform: translate(-50%, 30%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 3px solid white;
+      overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  pointer-events: none;  /* Этот элемент не будет блокировать клики на другие элементы */
+
+}
+.login-box-022 {
+    position: fixed;
+    bottom: 0%;
+    right: 0%;         /* Центрирование по горизонтали */
+    width: 50px;
+    height: 40px;
+    transform: translate(5%, 30%); /* Центрирование */
+    background: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 1px;
+    border: 3px solid white;
+      overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  overflow: hidden; /* Чтобы ничего не выходило за пределы */
+  pointer-events: none;  /* Этот элемент не будет блокировать клики на другие элементы */
+
+}
+.hidden-first {
+    opacity: 0;         /* Делаем полностью прозрачным */
+    pointer-events: none; /* Отключаем взаимодействие (не мешает кнопке) */
+    position: absolute;
+    z-index: -1; /* Отправляем на задний план */
+}
+
+.character-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 10;
+}
+
+.character-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.character-menu ul li {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.character-menu ul li:hover {
+    background-color: #f0f0f0;
+}
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 5px;
+            margin: 0;
+            width: 150px;
+            z-index: 10; /* добавлен для того, чтобы выпадающее меню не перекрывалось другими элементами */
+        }
+        .dropdown-menu li {
+            padding: 5px;
+            cursor: pointer;
+        }
+        .dropdown-menu li:hover {
+            background: lightgray;
+        }
+        .login-box-02 {
+            position: fixed;
+            top: 8%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box-02 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .white-text_c2-0 {
+            font-family: "Inter", sans-serif;
+            font-weight: 100;
+            font-size: 96px; /* Адаптивный размер текста */
+            background-color: black; /* Черный фон */
+            color: white; /* Белый текст */
+            position: absolute; /* Абсолютное позиционирование внутри родителя */
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%); /* Центрирование */
+            white-space: nowrap; /* Чтобы текст не переносился */
+            overflow: hidden; /* Чтобы ничего не выходило за пределы */
+            padding: 10px; /* Можно добавить отступы для красивого отображения */
+            border: none; /* Убираем обводки */
+        }
+        .login-box-0 {
+            position: fixed;
+            top: 8%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            overflow: hidden;
+        }
+        .login-box {
+            position: fixed;
+            top: 58%;
+            left: 20%;
+            width: 561px;
+            height: 716px;
+            padding: 5vw;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 5px solid white;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .login-box2 {
+            position: fixed;
+            top: 58%;
+            right: 20%;
+            width: 541px;
+            height: 716px;
+            padding: 5vw;
+            transform: translate(50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 5px solid white;
+        }
+        .login-box-021 {
+            position: fixed;
+            bottom: 0%;
+            left: 25%;
+            width: 50px;
+            height: 40px;
+            transform: translate(-50%, 30%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            pointer-events: none;
+        }
+        .login-box-022 {
+
+
+            right: 0%;
+            width: 50px;
+            height: 40px;
+            transform: translate(5%, 30%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            pointer-events: none;
+        }
+        .hidden-first {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+         .dropdown-menu {
+            display: none;
+            list-style: none;
+            padding: 5px;
+            margin: 0;
+            border: 1px solid black;
+            background-color: white;
+            position: absolute;
+            top: 15%;
+            left: 0;
+            width: 100%;
+        }
+
+        .dropdown {
+            display: none;
+            border: 1px solid #ccc;
+            background: white;
+            position: absolute;
+            width: 200px;
+        }
+        .dropdown div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dropdown div:hover {
+            background-color: lightblue;
+        }
+
+        .dropdown {
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;  // Убедитесь, что список поверх других элементов
+}
+
+.dropdown div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown div:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+.dropdown {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 150px;
+    color: white;
+    border-radius: 8px;
+
+    display: block !important; /* Убедимся, что он видим */
+    z-index: 1000;
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 150px; /* Для центрирования текста по вертикали */
+}
+.dropdown {
+    border: 2px solid red;
+}
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 5px;
+            margin: 0;
+            width: 150px;
+            z-index: 10; /* добавлен для того, чтобы выпадающее меню не перекрывалось другими элементами */
+        }
+        .dropdown-menu li {
+            padding: 5px;
+            cursor: pointer;
+        }
+        .dropdown-menu li:hover {
+            background: lightgray;
+        }
+        .login-box-02 {
+            position: fixed;
+            top: 8%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box-02 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .white-text_c2-0 {
+            font-family: "Inter", sans-serif;
+            font-weight: 100;
+            font-size: 96px; /* Адаптивный размер текста */
+            background-color: black; /* Черный фон */
+            color: white; /* Белый текст */
+            position: absolute; /* Абсолютное позиционирование внутри родителя */
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%); /* Центрирование */
+            white-space: nowrap; /* Чтобы текст не переносился */
+            overflow: hidden; /* Чтобы ничего не выходило за пределы */
+            padding: 10px; /* Можно добавить отступы для красивого отображения */
+            border: none; /* Убираем обводки */
+        }
+        .login-box-0 {
+            position: fixed;
+            top: 8%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            overflow: hidden;
+        }
+        .login-box {
+            position: fixed;
+            top: 58%;
+            left: 20%;
+            width: 561px;
+            height: 716px;
+            padding: 5vw;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 5px solid white;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .login-box2 {
+            position: fixed;
+            top: 58%;
+            right: 20%;
+            width: 541px;
+            height: 716px;
+            padding: 5vw;
+            transform: translate(50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 5px solid white;
+        }
+        .login-box-021 {
+            position: fixed;
+            bottom: 0%;
+            left: 25%;
+            width: 50px;
+            height: 40px;
+            transform: translate(-50%, 30%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            pointer-events: none;
+        }
+        .login-box-022 {
+
+
+            right: 0%;
+            width: 50px;
+            height: 40px;
+            transform: translate(5%, 30%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            pointer-events: none;
+        }
+        .hidden-first {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+
+
+        .dropdown {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+    text-align: center;
+}
+
+#character-list {
+    list-style: none;
+    padding: 0;
+}
+
+#character-list li {
+    padding: 5px;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+#character-list li:last-child {
+    border-bottom: none;
+}
+
+
+
+
+        }
+        .login-box-02 {
+            position: fixed;
+            top: 8%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-box-02 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .white-text_c2-0 {
+            font-family: "Inter", sans-serif;
+            font-weight: 100;
+            font-size: 96px; /* Адаптивный размер текста */
+            background-color: black; /* Черный фон */
+            color: white; /* Белый текст */
+            position: absolute; /* Абсолютное позиционирование внутри родителя */
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%); /* Центрирование */
+            white-space: nowrap; /* Чтобы текст не переносился */
+            overflow: hidden; /* Чтобы ничего не выходило за пределы */
+            padding: 10px; /* Можно добавить отступы для красивого отображения */
+            border: none; /* Убираем обводки */
+        }
+
+            .white-text_c2-02 {
+            font-family: "Inter", sans-serif;
+            font-weight: 100;
+            font-size: 96px; /* Адаптивный размер текста */
+            background-color: black; /* Черный фон */
+            color: white; /* Белый текст */
+            position: absolute; /* Абсолютное позиционирование внутри родителя */
+            left: 50%;
+            top: 42%;
+            transform: translate(-50%, -50%); /* Центрирование */
+            white-space: nowrap; /* Чтобы текст не переносился */
+            overflow: hidden; /* Чтобы ничего не выходило за пределы */
+            padding: 10px; /* Можно добавить отступы для красивого отображения */
+            border: none; /* Убираем обводки */
+        }
+
+        .login-box-0 {
+            position: fixed;
+            top: 8%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            overflow: hidden;
+        }
+        .login-box {
+            position: fixed;
+            top: 58%;
+            left: 20%;
+            width: 561px;
+            height: 716px;
+            padding: 5vw;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 5px solid white;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .login-box2 {
+            position: fixed;
+            top: 58%;
+            right: 20%;
+            width: 561px;
+            height: 716px;
+            padding: 5vw;
+            transform: translate(50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 5px solid white;
+        }
+        .login-box-021 {
+            position: fixed;
+            bottom: 0%;
+            left: 25%;
+            width: 50px;
+            height: 40px;
+            transform: translate(-50%, 30%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            pointer-events: none;
+        }
+        .login-box-022 {
+
+
+            right: 0%;
+            width: 50px;
+            height: 40px;
+            transform: translate(5%, 30%);
+            background: rgba(0, 0, 0, 0.8);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            border-radius: 1px;
+            border: 3px solid white;
+            pointer-events: none;
+        }
+        .hidden-first {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+.container {
+    position: relative;
+    margin-top: 600px; /* Опускаем все элементы ниже */
+}
+
+.new-container {
+    position: relative;
+    margin-top: 600px; /* Опускаем все элементы ниже */
+}
+
+.white-text_c2-0 {
+    cursor: pointer;
+    padding: 10px;
+
+}
+.white-text_c2-02 {
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+.character-dropdown {
+    position: absolute;
+    top: 650px; /* Смещаем вниз */
+    left: 50px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style-type: none;
+    display: none;
+}
+
+.character-dropdown ul {
+    padding: 0;
+    margin: 0;
+}
+
+.character-dropdown li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.character-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+.weapon-dropdown {
+    position: absolute;
+    top: 650vh; /* Смещаем вниз */
+    left: 50vh;
+    background: white;
+    border: 1hv solid #ccc;
+    padding: 10hv;
+    list-style-type: none;
+    display: none;
+}
+
+.weapon-dropdown ul {
+    padding: 0;
+    margin: 0;
+}
+
+.weapon-dropdown li {
+    cursor: pointer;
+    padding: 5hv;
+}
+
+.weapon-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+.login-box-02 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    z-index: 1000;
+    pointer-events: auto;
+    top: 650px; /* Опускаем новые блоки ниже */
+}
+.character-dropdown {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    max-height: 400px; /* Ограничение высоты */
+    height: 400px;
+    top: 100px;
+    overflow-y: auto; /* Прокрутка, если список длинный */
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+#character-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#character-list li:hover {
+    background: #f0f0f0;
+}
+
+
+.weapon-dropdown {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    max-height: 400px; /* Ограничение высоты */
+    top: 100px;
+    overflow-y: auto; /* Прокрутка, если список длинный */
+    padding: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+#weapon-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#weapon-list li:hover {
+    background: #f0f0f0;
+}
+
+
+
+.centered-links1 {
+    display: flex;
+    justify-content: center; /* Центрируем меню по горизонтали */
+    position: relative; /* Чтобы навигация была фиксированной на экране */
+    z-index: 10; /* Чтобы меню было поверх других элементов */
+}
+
+.panelll {
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: center; /* Выравнивание по вертикали */
+    list-style: none; /* Убираем стандартные маркеры списка */
+    padding: 0;
+    margin: 0;
+    position: relative; /* Для правильного позиционирования */
+}
+
+.panelll li {
+
+}
+
+.panelll a {
+    display: block;
+
+    text-decoration: none;
+
+
+
+}
+
+
+
+
+
+
+.panelll {
+    display: flex;
+
+}
+
+
+.user-name {
+    position: relative;
+    display: inline-block;
+    top: 155px;
+    z-index: 1000; /* Ставим на передний план */
+}
+
+.user-name input {
+    border: none;
+    border-bottom: 2px solid #FFFFFF;
+    outline: none;
+    background: transparent;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 5px;
+    padding: 5px 5px 0 5px; /* Верхний отступ увеличен, нижний убран */
+    height: 30px; /* Увеличивает высоту поля */
+    vertical-align: bottom; /* Опускает текст вниз */
+}
+
+.user-name label {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 14px;
+    color: #888;
+    transition: 0.3s;
+}
+
+.user-name input:focus + label,
+.user-name input:not(:placeholder-shown) + label {
+    top: -12px;
+    font-size: 12px;
+    color: #3498db;
+}
+
+.login-box234 {
+    display: flex;
+    flex-wrap: wrap; /* Заполняем сначала по горизонтали, потом вниз */
+    gap: 1px;
+    overflow: auto; /* Скролл при переполнении */
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Картинки */
+.image-container {
+    position: relative;
+    width: 30%;
+    height: 30%;
+    min-width: 30px;
+    min-height: 30px;
+        margin-bottom: 0px; /* Убираем дополнительный отступ снизу */
+
+}
+
+/* Картинки */
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+
+/* Кнопка удаления */
+.delete-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Показывать кнопку удаления при наведении */
+.image-container:hover .delete-btn {
+    display: flex;
+}
+
+.image-container:hover .delete-btn {
+    display: flex;
+}
+
+.login-box234 {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0px; /* Убираем вертикальный отступ между строками */
+    column-gap: 2px; /* Оставляем немного горизонтального расстояния */
+    align-content: flex-start; /* Новые строки ближе к верхним */
+    line-height: 0; /* Убираем лишний промежуток между строками */
+}
+
+
+
+
+.save-data-btn {
+ font-family: "Inter", sans-serif;
+            font-weight: 100;
+  color: white;
+  background-color: black;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  cursor: pointer;
+  text-align: center;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+    border: 2px solid #FFFFFF;
+
+  /* Центрирование кнопки */
+  position: fixed;
+  top: 87%;        /* Отсчитываем от верхней части окна */
+  left: 50%;       /* Отсчитываем от левой части окна */
+  transform: translate(-50%, -50%); /* Сдвигаем кнопку на 50% её размера для точного центрирования */
+
+  z-index: 30;
+}
+
+
+.save-data-btn:hover {
+  background-color: #333;
+}
+
+.save-data-btn svg {
+  display: inline;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.save-data-btn:focus svg {
+  animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+        .container {
+            width: 800px;
+            height: 700px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid #333;
+            background: #f9f9f9;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-content: flex-start;
+            position: relative;
+        }
+
+.new-container {
+            width: 800px;
+            height: 730px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid white;
+            background: black;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-content: flex-start;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .add-character-btn {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .character-block {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .image-block {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            background: #fff;
+            position: relative;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .image-block img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .input-field {
+            width: 80px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 80%;
+        }
+        .modal img {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+        .modal img:hover {
+            transform: scale(1.1);
+        }
+
+.input-container {
+    display: flex; /* Ставим поля ввода в одну строку */
+    justify-content: space-between; /* Разделяем пространство между полями */
+    gap: 10px; /* Добавляем немного отступа между полями */
+    width: 100%; /* Задаем ширину на всю доступную область */
+}
+
+.input-field {
+    width: 45%; /* Уменьшаем ширину полей ввода до 45% от контейнера */
+    padding: 5px; /* Добавляем немного внутреннего отступа */
+    box-sizing: border-box; /* Для корректного расчёта ширины */
+}
+
+        /* Убираем стрелки в числовых полях ввода */
+.input-field::-webkit-outer-spin-save-data-btn,
+.input-field::-webkit-inner-spin-save-data-btn {
+    -webkit-appearance: none; /* Для Chrome и Safari */
+    margin: 0; /* Убираем отступы */
+}
+
+.input-field[type="number"] {
+    -moz-appearance: textfield; /* Для Firefox */
+}
+
+
+
+    /* Стили для контейнера */
+    #container {
+        background-color: black; /* Черный фон контейнера */
+        border: 2px solid white; /* Белая обводка контейнера */
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px; /* Закругленные углы */
+    }
+
+        /* Стили для контейнера */
+    #new-container {
+        background-color: black; /* Черный фон контейнера */
+        border: 2px solid white; /* Белая обводка контейнера */
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px; /* Закругленные углы */
+    }
+
+    /* Стили для других элементов внутри контейнера, если нужно */
+    .character-block {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #222; /* Темный фон для каждого блока */
+        border-radius: 5px;
+    }
+
+    /* Стили для полей ввода */
+    .input-field {
+        background-color: #333; /* Темный фон для полей ввода */
+        color: white; /* Белый текст */
+        border: 1px solid white; /* Белая рамка */
+        padding: 5px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    /* Стили для кнопок */
+    .delete-btn {
+        background-color: red; /* Красный фон для кнопки удаления */
+        color: white; /* Белый текст на кнопке */
+        border: none;
+        padding: 5px 10px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    /* Стили для изображений */
+    .image-block img {
+        max-width: 100px;
+        max-height: 100px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Модальное окно */
+    #imageModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+        justify-content: center;
+        align-items: center;
+    }
+
+    #imageModal img {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+    }
+
+    /* Стили для кнопки сохранения */
+    #saveDataBtn {
+        background-color: #444;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+
+
+
+
+    /* Стили для контейнера */
+    #container {
+        background-color: black; /* Черный фон контейнера */
+        border: 2px solid white; /* Белая обводка контейнера */
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px; /* Закругленные углы */
+    }
+
+        /* Стили для контейнера */
+    #new-container {
+        background-color: black; /* Черный фон контейнера */
+        border: 2px solid white; /* Белая обводка контейнера */
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px; /* Закругленные углы */
+    }
+
+    /* Стили для других элементов внутри контейнера, если нужно */
+    .character-block {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #222; /* Темный фон для каждого блока */
+        border-radius: 5px;
+    }
+
+    /* Стили для блока с изображением */
+    .image-block {
+        background-color: black; /* Черный фон, если изображение не установлено */
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Стили для изображения */
+    .image-block img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Стили для полей ввода */
+    .input-field {
+        background-color: #333; /* Темный фон для полей ввода */
+        color: white; /* Белый текст */
+        border: 1px solid white; /* Белая рамка */
+        padding: 5px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+
+    /* Стили для кнопок */
+    .delete-btn {
+        background-color: red; /* Красный фон для кнопки удаления */
+        color: white; /* Белый текст на кнопке */
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Стили для модального окна */
+    #imageModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+        justify-content: center;
+        align-items: center;
+    }
+
+    #imageModal img {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 10px;
+    }
+
+    /* Стили для кнопки сохранения */
+    #saveDataBtn {
+        background-color: #444;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+.character-block {
+    background-color: black; /* Черный фон */
+
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.image-block {
+    background-color: black; /* Черный фон для области с изображением */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-block img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.character-block {
+    background-color: black; /* Черный фон */
+    padding: 0px;
+    border-radius: 5px;
+    width: 100px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.image-block {
+    background-color: black; /* Черный фон для области с изображением */
+    width: 100%; /* Занимает всю ширину родительского элемента */
+    height: 100px;    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.image-block img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+        .input-field {
+    margin-left: 20px;  /* Отступ слева */
+    width: 100%; /* Занимает всю ширину родительского элемента */
+    height: 20px;    display: flex;
+}
+
+/* Стили для контейнера с полями ввода */
+.input-container {
+    display: flex;
+    justify-content: space-between; /* Чтобы поля ввода располагались рядом */
+    width: 100%;    /* Контейнер будет на всю ширину */
+    padding: 5px 0; /* Минимальные отступы, только сверху и снизу */
+        left: -90px;
+}
+
+/* Стили для полей ввода */
+.input-field {
+    width: 48%;      /* Поля занимают 48% ширины контейнера, чтобы между ними был небольшой промежуток */
+    height: 35px;    /* Увеличим высоту, чтобы сделать поля более заметными */
+    font-size: 14px;  /* Меньший шрифт */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину поля */
+    left: -90px;
+}
+/* Стили для контейнера с полями ввода */
+.input-container {
+    display: flex; /* Для горизонтального выравнивания */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    width: 100%; /* Контейнер занимает 100% ширины родителя */
+    margin-top: 20px; /* Отступ сверху */
+    margin-bottom: 0; /* Убираем отступ снизу */
+}
+
+/* Стили для каждого поля ввода */
+.input-field {
+    width: 50%; /* Поле ввода занимает 50% ширины контейнера */
+    padding: 8px; /* Внутренние отступы для удобства */
+    margin: 0; /* Убираем отступы между полями */
+    font-size: 14px; /* Размер шрифта */
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+    border: 2px solid #ccc; /* Тонкая рамка */
+    border-radius: 0; /* Без скругленных углов */
+    box-sizing: border-box; /* Учитывать padding и border в общей ширине */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+/* Сдвиг полей ввода ближе друг к другу */
+.input-field:first-child {
+    margin-right: -5px; /* Сдвигаем первое поле вправо */
+}
+
+.input-field:last-child {
+    margin-left: -5px; /* Сдвигаем второе поле влево */
+}
+
+
+/* Сдвиг полей ввода ближе друг к другу */
+.input-field:first-child {
+    margin-right: -5px; /* Сдвигаем первое поле вправо */
+}
+
+.input-field:last-child {
+    margin-left: -5px; /* Сдвигаем второе поле влево */
+}
+
+
+
+.image-block {
+width:100px;
+border-radius: 0; /* Без скругленных углов */
+    border: 2px solid white; /* Белая обводка */
+
+}
+
+        /* Стили для кнопки "Добавить персонажа" */
+.add-character-btn {
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+    border: 2px solid white; /* Белая обводка */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    border-radius: 5px; /* Скругленные углы */
+    cursor: pointer; /* Курсор в виде руки */
+    text-align: center; /* Выравнивание текста по центру */
+    display: inline-block; /* Поведение как у блока, но только по содержимому */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход фона и обводки */
+}
+
+/* Стили для кнопки с крестиком */
+.delete-btn {
+    background-color: transparent; /* Прозрачный фон */
+    color: #666; /* Текст (крестик) серого цвета, ближе к черному */
+    font-size: 24px; /* Размер шрифта (крестик) */
+    border: none; /* Без обводки */
+    cursor: pointer; /* Курсор в виде руки */
+    padding: 5px 10px; /* Внутренние отступы для кнопки */
+    transition: color 0.3s; /* Плавный переход для цвета текста */
+}
+
+/* Стили при наведении на кнопку */
+.delete-btn:hover {
+    color: #333; /* Цвет текста меняется на темно-серый при наведении */
+}
+
+
+
+
+        /* Для контейнера с изображениями */
+#imageList {
+    background-color: #333; /* Темно-серый фон */
+    padding: 10px; /* Добавляем отступы, чтобы элементы не прилипали к краям */
+    border-radius: 7px; /* Округление углов контейнера */
+    border: 5px solid #D3D3D3; /* Белая обводка */
+
+}
+
+#imageList img {
+
+    border: 2px solid white; /* Белая обводка */
+    border-radius: 5px; /* Округление углов картинок */
+}
+
+
+
+
+
+
+#container {
+    width: 600px; /* Фиксированная ширина */
+    height: 700px; /* Фиксированная высота */
+    position: fixed; /* Фиксированное положение */
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -40%); /* Центрирование */
+    overflow: auto; /* Добавляет скролл, если содержимое выходит за границы */
+}
+
+.new-container {
+    width: 600px; /* Фиксированная ширина */
+    height: 700px; /* Фиксированная высота */
+    position: fixed; /* Фиксированное положение */
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -40%); /* Центрирование */
+    overflow: auto; /* Добавляет скролл, если содержимое выходит за границы */
+}
+
+
+
+.input-field {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: textfield;
+}
+.input-field::-webkit-outer-spin-button,
+.input-field::-webkit-inner-spin-button {
+    display: none;
+    margin: 0;
+}
+
+
+#imageModal {
+
+    z-index: 9999; /* Поверх всего */
+}
+
+
+/* Стили для модального окна */
+#imageSelectionModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для контейнера списка изображений */
+#imageSelectionList {
+    background: #808080; /* Серый фон */
+    border: 2px solid #fff; /* Белая обводка */
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto; /* Прокрутка, если список длинный */
+}
+
+/* Стили для изображений в списке */
+#imageSelectionList img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+#imageSelectionList img:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+#imageSelectionList {
+    background-color: #333; /* Темно-серый фон */
+    padding: 10px; /* Добавляем отступы, чтобы элементы не прилипали к краям */
+    border-radius: 7px; /* Округление углов контейнера */
+    border: 5px solid #D3D3D3; /* Белая обводка */
+
+}
+
+#imageSelectionList img {
+
+    border: 2px solid white; /* Белая обводка */
+    border-radius: 5px; /* Округление углов картинок */
+}
+
+#imageSelectionModal {
+
+    z-index: 9999; /* Поверх всего */
+}
+
+
+
+
+.white-text_c{
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-215%, -540%); /* Центрирование */
+}
+
+
+.white-text_c2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 600px), -530%); /* Центр + сдвиг */
+}
+
+.user-name {
+    position: fixed; /* Закрепляет элемент */
+    top: 21%; /* Центрирует по вертикали */
+    left: 50%; /* Центрирует по горизонтали */
+    transform: translate(-50%, -50%); /* Корректирует позицию */
+}
+
+
+
+.logoMM2 {
+  position: absolute;
+
+  width: 450px;
+  select: none;
+  bottom: -180px;
+  left: 50%;       /* Отсчитываем от левой части окна */
+  transform: translate(-50%, 0%); /* Сдвигаем кнопку на 50% её размера для точного центрирования */
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для текста заголовков */
+.white-text2,
+.white-text22 {
+    color: white;
+    /* Добавьте другие стили, если нужно (шрифт, размер и т.д.) */
+}
+
+/* Основной контейнер меню */
+.centered-links1 {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Стили панели навигации */
+.panelll ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Расстояние между пунктами */
+}
+
+/* Стили пунктов меню */
+.panelll li {
+    margin: 0;
+}
+
+/* Стили ссылок */
+.panelll a {
+
+    cursor: pointer; /* Курсор-рука при наведении */
+
+    z-index: 999999; /* Чтобы ссылка была выше фона */
+}
+
+
+
+/* Запрет выделения текста и перетаскивания изображений */
+.panelll a {
+    user-select: none; /* Запрет выделения текста */
+    -webkit-user-drag: none; /* Запрет перетаскивания (для Safari) */
+    pointer-events: auto; /* Гарантирует, что ссылка кликабельна */
+}
+
+
+
+
+
+
+/* Разрешаем события только для ссылок */
+.force-new-tab, .panelll, .panelll * {
+    pointer-events: auto !important;
+}
