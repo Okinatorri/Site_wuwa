@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Персонажи</title>
+</head>
+<body>
+    <h1>Список персонажей</h1>
+    <ul>
+        {% for char in characters %}
+            <li>
+                <h2>{{ char[1] }}</h2> <!-- char[1] = name -->
+                <img src="{{ char[2] }}" alt="{{ char[1] }}" width="200"> <!-- char[2] = image -->
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

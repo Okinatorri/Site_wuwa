@@ -1,0 +1,1112 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bans.css') }}" />
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+
+
+     <title>Mogo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        intro {
+
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .side {
+            width: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+            top: -100px;
+        }
+
+.username {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: regular;
+   font-size: 55px;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 10;
+    text-decoration: none;
+    font-family: 'Georgia', serif; /* Шрифт с Google Fonts */
+    font-weight: regular;
+   font-size: 55px;
+}
+
+
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px; /* Увеличил расстояние между картинками */
+            margin-top: 80px;
+            justify-content: flex-start;
+        }
+
+        .characters.right-align {
+            justify-content: flex-start;
+            padding-left: 60px;
+        }
+
+        .character-wrapper {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .character {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+
+        .character-border {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background-size: cover;
+            pointer-events: none; /* Чтобы рамка не мешала кликам */
+        }
+
+        .values {
+            position: absolute;
+            bottom: -20px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 2px;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            border: 1px solid gray;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 100;
+            padding: 5px;
+            width: 150px;
+            text-align: left;
+        }
+
+        .dropdown div {
+            padding: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .dropdown div:hover {
+            background: lightblue;
+        }
+.character-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 90px; /* Фиксированная ширина контейнера */
+    height: 90px; /* Фиксированная высота контейнера */
+    margin: 0 5px; /* Уменьшенные промежутки между картинками */
+}
+
+.character {
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+}
+
+.character-border {
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Рамка поверх картинки */
+}
+
+.values {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    bottom: -5px; /* Расстояние от нижней части картинки */
+    left: 50%; /* Центрируем текст */
+    transform: translateX(-50%); /* Центрируем текст по X */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Черный фон с прозрачностью */
+    padding: 2px 3px; /* Еще меньше padding */
+    font-size: 15px; /* Меньший размер шрифта */
+    z-index: 2;
+    border-radius: 3px; /* Скругленные углы */
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+    .side {
+        width: 900px;
+        padding: 55px;
+
+        position q: relative;
+        top: -140px;
+        left:50px;
+    }
+
+
+    .username {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        white-space: nowrap;
+        z-index: 10;
+        text-decoration: none;
+    }
+
+    .characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 20px;
+        margin-top: 80px;
+        justify-content: flex-start;
+        z-index: 0;
+
+    }
+
+    .characters.right-align {
+        justify-content: flex-start;
+        padding-left: 60px;
+    }
+
+    .character-wrapper {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        margin: 0 5px;
+        top: 90px;
+        right:50px;
+
+    }
+
+    .character {
+        width: 80px;
+        height: 80px;
+        left:5px;
+        top:5px ;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 0;
+    }
+
+    .character-border {
+        width: 90px;
+        height: 90px;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .values {
+        position: absolute;
+        width: 60px;
+        height: 20px;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 2px 3px;
+        font-size: 15px;
+        z-index: 2;
+        border-radius: 3px;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        margin: 10px;
+        position: relative;
+
+    }
+
+
+
+
+
+.image-container {
+    width: 90px;
+    height: 90px; /* Оставляем высоту 50px */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa; /* Цвет текста */
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    border-radius: 50%; /* Делаем контейнеры круглыми */
+    margin-bottom: 10px; /* Отступ снизу для контейнеров */
+    background-image: url('/static/image/Layer 10 copy 16.png'); /* Добавляем картинку рамки */
+    background-size: cover; /* Убедимся, что картинка занимает весь контейнер */
+    background-position: center; /* Центрируем картинку */
+    z-index: 15;
+}
+.image-container.empty {
+    background-color: #e0e0e0; /* Тёмный фон для пустого контейнера */
+    background-image: url('/static/image/Layer 10 copy 16.png'); /* Добавляем картинку только для пустого контейнера */
+}
+
+.right-align {
+    text-align: right;
+}
+/* Добавляем фиксированное положение и горизонтальное выравнивание контейнеров */
+#player1Container1, #player1Container2, #player1Container3, #player1Container4,
+#player2Container1, #player2Container2, #player2Container3, #player2Container4 {
+    position: absolute; /* Фиксируем контейнеры в одном месте */
+    top: -100px; /* Вы можете настроить это значение для нужного расположения сверху */
+}
+
+#player1Container1 {
+    left: 603px; /* Позиция для первого контейнера */
+    top: -105px;
+        background-image: url('/path/to/your/new-image.png'); /* Укажите путь к новой картинке */
+
+}
+
+#player1Container2 {
+    left: 600px; /* Позиция для второго контейнера */
+    top: 20px;
+}
+
+#player1Container3 {
+    left: 480px; /* Позиция для третьего контейнера */
+    top: 20px;
+}
+
+#player1Container4 {
+    left: 360px; /* Позиция для четвертого контейнера */
+    top: 20px;
+}
+
+#player2Container1 {
+    left: 0px; /* Позиция для первого контейнера игрока 2 */
+    top: 310px; /* Позиция сверху для второго игрока */
+        left: 58px; /* Позиция для первого контейнера */
+    top: -104px;
+        background-image: url('/path/to/your/new-image.png'); /* Укажите путь к новой картинке */
+
+
+}
+
+#player2Container2 {
+    left: 58px; /* Позиция для второго контейнера игрока 2 */
+    top: 20px;
+    z-index: 15;
+}
+
+#player2Container3 {
+    left: 178px; /* Позиция для третьего контейнера игрока 2 */
+    top: 20px;
+}
+
+#player2Container4 {
+    left: 300px; /* Позиция для четвертого контейнера игрока 2 */
+    top: 20px;
+}
+
+
+.player1Name {
+
+left:-100px;
+
+}
+
+
+.dropdown-img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+     .username {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: regular;
+    font-size: 35px;
+    cursor: pointer;
+
+    border-radius: 5px;
+    position: relative;
+    top: 100px;
+}
+
+#player1Name {
+position: absolute; /* Абсолютное позиционирование */
+    left: 150px; /* Сдвигаем левую кнопку левее */
+    top: -80px;
+}
+
+
+#player2Name {
+position: absolute; /* Абсолютное позиционирование */
+    text-align: left;
+    left: 635px; /* Сдвигаем левую кнопку левее */
+    top: -80px;
+}
+
+
+
+.bans_im,
+.bans_im2,
+.bans_im21,
+.bans_im22 {
+    width: 135px;
+    height: 135px;
+    object-fit: cover;
+    transform: translate(10px, -10px); /* Сдвиг вправо и вверх */
+}
+
+.bans_im {
+
+    transform: translate(-50px, -15px); /* Сдвиг вправо и вверх */
+}
+
+.bans_im22 {
+
+    transform: translate(40px, -15px); /* Сдвиг вправо и вверх */
+}
+.bans_im21 {
+
+    transform: translate(-75px, -15px); /* Сдвиг вправо и вверх */
+}
+
+.bans_im2 {
+
+    transform: translate(55px, -15px); /* Сдвиг вправо и вверх */
+}
+
+
+.ban-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid black;
+}
+
+.ban-container img.clickable {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.background-options {
+    display: none;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    background: white;
+    padding: 5px;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
+
+.background-options img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+ .image-list {
+      display: none;
+      position: absolute;
+      background: black;
+      border: 2px solid #ccc;
+      padding: 10px;
+      z-index: 9999; /* Подняли список выше всех */
+  }
+
+  .image-list img {
+      display: block;
+      margin-bottom: 5px;
+      width: 80px; /* Уменьшаем */
+      height: 80px;
+
+      border-radius: 50%;
+  }
+
+  /* Выбранное изображение */
+  .selected-image {
+      position: absolute;
+      border-radius: 50%;
+      object-fit: cover;
+      display: none;
+      z-index: 5; /* Чтобы не перекрывалось */
+  }
+
+  /* Привязываем выбранные картинки под основные */
+  .bans_im2-bg, .bans_im21-bg, .bans_im213-bg {
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+  }
+
+  .bans_im2, .bans_im21 {
+
+      z-index: 10;
+      pointer-events: auto;
+  }
+ </style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="intro">
+
+
+     <img src="{{ url_for('static', filename='image/Layer 8.png') }}" alt="Фоновое изображение" class="bg" />
+
+
+
+<div>
+    <img src="{{ url_for('static', filename='image//picks copy 10.png') }}" alt="Фоновое изображение" class="bans_im" />
+
+</div>
+
+
+
+<!-- Основные изображения -->
+<img src="{{ url_for('static', filename='image//picks copy 10.png') }}"
+     alt="Фоновое изображение" class="bans_im2" onclick="showImages(event, 'list1')" />
+<img id="selected1" class="selected-image bans_im2-bg" />
+
+<img src="{{ url_for('static', filename='image//picks copy 10.png') }}"
+     alt="Фоновое изображение" class="bans_im21" onclick="showImages(event, 'list2')" />
+<img id="selected2" class="selected-image bans_im21-bg" />
+
+
+<img src="{{ url_for('static', filename='image//Layer 10 copy 16.png') }}"
+     alt="Фоновое изображение" class="bans_im213" onclick="showImages(event, 'list3')" />
+<img id="selected3" class="selected-image bans_im213-bg" />
+
+
+<img src="{{ url_for('static', filename='image//Layer 10 copy 16.png') }}"
+     alt="Фоновое изображение" class="bans_im2134" onclick="showImages(event, 'list4')" />
+<img id="selected4" class="selected-image bans_im2134-bg" />
+
+
+
+
+<!-- Списки выбора -->
+<div id="list1" class="image-list">
+<img src="{{ url_for('static', filename='image/galograms/DragonofDirge-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected1', this, 'bans_im2')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FallacyofNoReturn-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected1', this, 'bans_im2')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FeilianBeringal-ezgif.com-overlay_1.png') }}"
+     onclick="selectImage('selected1', this, 'bans_im2')" />
+
+<img src="{{ url_for('static', filename='image/galograms/Hecate-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected1', this, 'bans_im2')" />
+
+<img src="{{ url_for('static', filename='image/galograms/SentryConstruct-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected1', this, 'bans_im2')" />
+
+<img src="{{ url_for('static', filename='image/galograms/TempestMephis-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected1', this, 'bans_im2')" />
+
+
+
+</div>
+
+<div id="list2" class="image-list">
+<img src="{{ url_for('static', filename='image/galograms/DragonofDirge-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected2', this, 'bans_im21')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FallacyofNoReturn-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected2', this, 'bans_im21')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FeilianBeringal-ezgif.com-overlay_1.png') }}"
+     onclick="selectImage('selected2', this, 'bans_im21')" />
+
+<img src="{{ url_for('static', filename='image/galograms/Hecate-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected2', this, 'bans_im21')" />
+
+<img src="{{ url_for('static', filename='image/galograms/SentryConstruct-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected2', this, 'bans_im21')" />
+
+<img src="{{ url_for('static', filename='image/galograms/TempestMephis-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected2', this, 'bans_im21')" />
+</div>
+
+
+
+
+
+<div id="list3" class="image-list">
+<img src="{{ url_for('static', filename='image/galograms/DragonofDirge-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected3', this, 'bans_im213')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FallacyofNoReturn-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected3', this, 'bans_im213')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FeilianBeringal-ezgif.com-overlay_1.png') }}"
+     onclick="selectImage('selected3', this, 'bans_im213')" />
+
+<img src="{{ url_for('static', filename='image/galograms/Hecate-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected3', this, 'bans_im213')" />
+
+<img src="{{ url_for('static', filename='image/galograms/SentryConstruct-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected3', this, 'bans_im213')" />
+
+<img src="{{ url_for('static', filename='image/galograms/TempestMephis-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected3', this, 'bans_im213')" />
+</div>
+
+
+
+
+<div id="list4" class="image-list">
+<img src="{{ url_for('static', filename='image/galograms/DragonofDirge-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected4', this, 'bans_im2134')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FallacyofNoReturn-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected4', this, 'bans_im2134')" />
+
+<img src="{{ url_for('static', filename='image/galograms/FeilianBeringal-ezgif.com-overlay_1.png') }}"
+     onclick="selectImage('selected4', this, 'bans_im2134')" />
+
+<img src="{{ url_for('static', filename='image/galograms/Hecate-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected4', this, 'bans_im2134')" />
+
+<img src="{{ url_for('static', filename='image/galograms/SentryConstruct-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected4', this, 'bans_im2134')" />
+
+<img src="{{ url_for('static', filename='image/galograms/TempestMephis-ezgif.com-overlay.png') }}"
+     onclick="selectImage('selected4', this, 'bans_im2134')" />
+</div>
+
+
+
+<script>
+function showImages(event, listId) {
+    let list = document.getElementById(listId);
+    let target = event.target; // Картинка, по которой кликнули
+
+    // Получаем координаты изображения
+    let rect = target.getBoundingClientRect();
+
+    // Отображаем список под изображением
+    list.style.display = 'block';
+    list.style.left = rect.left + 'px';
+    list.style.top = (rect.bottom + window.scrollY) + 'px'; // Под картинкой
+}
+
+function selectImage(targetId, img, mainClass) {
+    let target = document.getElementById(targetId);
+    let mainImg = document.querySelector(`.${mainClass}`);
+
+    if (!mainImg) return; // Если основная картинка не найдена, ничего не делаем
+
+    let scaleFactor = 0.6; // Коэффициент уменьшения
+    let newSize = mainImg.clientWidth * scaleFactor;
+    target.src = img.src;
+    target.style.display = 'block';
+    target.style.width = newSize + 'px';
+    target.style.height = newSize + 'px';
+
+    // Получаем координаты основной картинки
+    let rect = mainImg.getBoundingClientRect();
+
+    // Вычисляем корректные координаты с учётом уменьшения
+    let offsetX = (mainImg.clientWidth * (1 - scaleFactor)) / 2;
+    let offsetY = (mainImg.clientHeight * (1 - scaleFactor)) / 2;
+
+    // Проверяем, относится ли картинка к .bans_im213 или .bans_im2134
+    let shiftX = 0, shiftY = 0;
+    if (mainImg.classList.contains('bans_im213') || mainImg.classList.contains('bans_im2134')) {
+        shiftX = -20;
+        shiftY = -20;
+    }
+
+    target.style.left = (rect.left + offsetX + shiftX) + 'px';
+    target.style.top = (rect.top + offsetY + shiftY + window.scrollY) + 'px';
+
+    // Слушаем клик по основному изображению, чтобы снова открыть список
+    mainImg.addEventListener('click', function(event) {
+        showImages(event, mainImg.dataset.listId);
+    });
+}
+
+// Закрытие списка, если кликнули вне
+document.addEventListener('click', function (event) {
+    if (!event.target.matches('.bans_im2, .bans_im21, .bans_im213, .bans_im2134, .selected-image')) {
+        document.querySelectorAll('.image-list').forEach(el => el.style.display = 'none');
+    }
+});
+
+// При загрузке страницы подгоняем фоновые изображения под основные
+window.onload = function () {
+    document.querySelectorAll('.selected-image').forEach(img => {
+        let mainImg = document.querySelector(`.${img.id.replace('selected', 'bans_im')}`);
+        if (!mainImg) return;
+
+        let newSize = mainImg.clientWidth * 0.7;
+
+        img.style.width = newSize + 'px';
+        img.style.height = newSize + 'px';
+        img.style.left = (mainImg.offsetLeft + (mainImg.clientWidth - newSize) / 2) + 'px';
+        img.style.top = (mainImg.offsetTop + (mainImg.clientHeight - newSize) / 2) + 'px';
+        img.style.display = 'block';
+
+        // Добавляем возможность снова кликать на изображение
+        img.addEventListener('click', function(event) {
+            showImages(event, mainImg.dataset.listId);
+        });
+
+        // Привязываем ID списка к элементу
+        mainImg.dataset.listId = img.dataset.listId;
+    });
+};
+
+</script>
+
+
+<div class="ban2">
+    <img src="{{ url_for('static', filename='image//picks copy 10.png') }}" alt="Фоновое изображение" class="bans_im22" />
+</div>
+
+    <h1 class="bans">BANS</h1>
+    <h1 class="bans">PICKS</h1>
+
+
+
+
+
+
+<div class="container">
+    <div class="side">
+        <div class="username" id="player1Name">Выберите игрока</div>
+        <div class="dropdown" id="player1List"></div>
+        <div class="characters" id="characters1"></div>
+
+        <!-- Контейнеры для изображений (4 для каждого игрока) -->
+        <div class="image-container" id="player1Container1"></div>
+        <div class="image-container" id="player1Container2"></div>
+        <div class="image-container" id="player1Container3"></div>
+        <div class="image-container" id="player1Container4"></div>
+    </div>
+
+    <div id="side2" class="side">
+        <div class="username" id="player2Name">Выберите игрока</div>
+        <div class="dropdown" id="player2List"></div>
+        <div class="characters right-align" id="characters2"></div>
+
+        <!-- Контейнеры для изображений (4 для каждого игрока) -->
+        <div class="image-container" id="player2Container1"></div>
+        <div class="image-container" id="player2Container2"></div>
+        <div class="image-container" id="player2Container3"></div>
+        <div class="image-container" id="player2Container4"></div>
+    </div>
+</div>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    setupPlayerSelection("player1Name", "player1List", "characters1", ["player1Container1", "player1Container2", "player1Container3", "player1Container4"]);
+    setupPlayerSelection("player2Name", "player2List", "characters2", ["player2Container1", "player2Container2", "player2Container3", "player2Container4"]);
+
+    function setupPlayerSelection(nameId, listId, containerId, playerContainers) {
+        const nameField = document.getElementById(nameId);
+        const list = document.getElementById(listId);
+        const container = document.getElementById(containerId);
+
+        nameField.addEventListener("click", async function (event) {
+            event.stopPropagation();
+            list.innerHTML = "";
+            list.style.display = list.style.display === "block" ? "none" : "block";
+
+            const response = await fetch("/get_players");
+            const players = await response.json();
+
+            players.forEach(player => {
+                const div = document.createElement("div");
+                div.textContent = player;
+                div.addEventListener("click", () => selectPlayer(player));
+                list.appendChild(div);
+            });
+        });
+
+        async function selectPlayer(nickname) {
+            nameField.textContent = nickname;
+            list.style.display = "none";
+
+            const response = await fetch(`/get_characters/${nickname}`);
+            const characters = await response.json();
+
+            container.innerHTML = ""; // Clear previous characters
+
+            characters.forEach(({ url, value1, value2 }) => {
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("character-wrapper");
+
+                // Character div (Image)
+                const charDiv = document.createElement("div");
+                charDiv.classList.add("character");
+                charDiv.style.backgroundImage = `url(${url})`;
+
+                // Border div (Frame)
+                const borderDiv = document.createElement("div");
+                borderDiv.classList.add("character-border");
+                borderDiv.style.backgroundImage = "url('/static/image/Layer 10 copy 16.png')"; // Путь к рамке
+
+                // Position the border div on top of the character div
+                charDiv.style.position = "relative"; // So that borderDiv can be positioned over it
+                borderDiv.style.position = "absolute"; // Absolute positioning for the border
+
+                // Values Div (under the character)
+                const valuesDiv = document.createElement("div");
+                valuesDiv.classList.add("values");
+                valuesDiv.textContent = `${value1} | ${value2}`;
+
+                wrapper.appendChild(charDiv);
+                wrapper.appendChild(borderDiv);
+                wrapper.appendChild(valuesDiv);
+                container.appendChild(wrapper);
+
+                // Make the character clickable to copy to a player container
+                charDiv.addEventListener("click", () => copyToPlayerContainers(url, value1, value2, playerContainers));
+            });
+        }
+
+        // Copy selected character to player containers
+        // Функция для копирования выбранного персонажа в контейнеры игрока
+        function copyToPlayerContainers(url, value1, value2, playerContainers) {
+            for (let i = 0; i < playerContainers.length; i++) {
+                const targetContainer = document.getElementById(playerContainers[i]);
+
+                if (!targetContainer.innerHTML) { // Если контейнер пуст
+                    targetContainer.innerHTML = ''; // Очистить контейнер перед добавлением
+
+                    const wrapper = document.createElement("div");
+                    wrapper.classList.add("character-wrapper");
+                    wrapper.style.position = "relative"; // Для правильного позиционирования
+
+                    // Character div (Изображение)
+                    const charDiv = document.createElement("div");
+                    charDiv.classList.add("character");
+                    charDiv.style.backgroundImage = `url(${url})`;
+
+                    // Размер изображения
+                    charDiv.style.width = "72px";
+                    charDiv.style.height = "72px";
+                    charDiv.style.position = "absolute"; // Абсолютное позиционирование внутри контейнера
+                    charDiv.style.top = "-80px"; // Регулировка верхнего отступа
+                    charDiv.style.left = "50%"; // Центрирование
+                    charDiv.style.transform = "translateX(20%)"; // Смещение влево на половину ширины
+
+                    // Border div (Рамка)
+                    const borderDiv = document.createElement("div");
+                    borderDiv.classList.add("character-border");
+                    borderDiv.style.position = "absolute";
+                    borderDiv.style.top = "0";
+                    borderDiv.style.left = "0";
+                    borderDiv.style.width = "100%";
+                    borderDiv.style.height = "100%";
+
+
+                    // Values Div (Под изображением)
+                    const valuesDiv = document.createElement("div");
+                    valuesDiv.classList.add("values");
+                    valuesDiv.textContent = `${value1} | ${value2}`;
+                    valuesDiv.style.position = "absolute";
+                    valuesDiv.style.bottom = "85px"; // Расположение под изображением
+                    valuesDiv.style.left = "50%";
+                    valuesDiv.style.transform = "translateX(35%)";
+
+                    wrapper.appendChild(charDiv);
+                    wrapper.appendChild(borderDiv);
+                    wrapper.appendChild(valuesDiv);
+                    targetContainer.appendChild(wrapper);
+
+                    // Убираем класс "empty", если контейнер теперь не пуст
+                    targetContainer.classList.remove("empty");
+
+                    // Добавляем обработчик клика, чтобы удалять картинку при клике
+                    charDiv.addEventListener("click", function () {
+                        targetContainer.innerHTML = ''; // Удаляем изображение и рамку
+                    });
+
+                    break; // Останавливаемся после добавления в первый пустой контейнер
+                }
+            }
+        }
+
+
+
+
+        document.addEventListener("click", () => {
+            list.style.display = "none";
+        });
+
+        list.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+    }
+});
+</script>
+
+
+<div class="ban_container">
+    <img src="{{ url_for('static', filename='image//Layer 10 copy 16.png') }}"
+         alt="Фоновое изображение" class="ban_img_1" onclick="showImagesCustom(event, 'ban_img_1')" />
+
+    <img src="{{ url_for('static', filename='image//Layer 10 copy 16.png') }}"
+         alt="Фоновое изображение" class="ban_img_2" onclick="showImagesCustom(event, 'ban_img_2')" />
+
+    <img src="{{ url_for('static', filename='image//picks copy 10.png') }}"
+         alt="Фоновое изображение" class="ban_img_3" onclick="showImagesCustom(event, 'ban_img_3')" />
+</div>
+
+<!-- Контейнер для списка картинок -->
+<div id="image_dropdown_custom2" class="image_dropdown_custom"></div>
+
+<script>
+async function showImagesCustom(event, targetClass) {
+    let listContainer = document.getElementById('image_dropdown_custom2');
+    listContainer.innerHTML = ''; // Очищаем старые картинки
+
+    // Запрашиваем список картинок с сервера
+    let response = await fetch('/images');
+    let images = await response.json();
+
+    if (!images.length) return;
+
+    images.forEach(url => {
+        let img = document.createElement('img');
+        img.src = url;
+        img.classList.add('dropdown_img_custom'); // Класс для стилизации
+        img.onclick = () => selectImageCustom(targetClass, url);
+        listContainer.appendChild(img);
+    });
+
+    // Позиционируем список
+    let rect = event.target.getBoundingClientRect();
+    let viewportHeight = window.innerHeight;
+
+    listContainer.style.display = 'block';
+    listContainer.style.left = rect.left + 'px';
+
+    // Если картинка внизу экрана → показываем список сверху
+    if (rect.bottom + 100 > viewportHeight) {
+        listContainer.style.top = (rect.top + window.scrollY - listContainer.offsetHeight - 10) + 'px';
+    } else {
+        listContainer.style.top = (rect.bottom + window.scrollY + 10) + 'px';
+    }
+
+    // Запоминаем, какая рамка была нажата
+    listContainer.setAttribute("data-target", targetClass);
+}
+
+function selectImageCustom(targetClass, imgUrl) {
+    let target = document.querySelector(`.${targetClass}`);
+
+    if (!target) return;
+
+    // Проверяем, есть ли уже вставленный фон
+    let existingBg = target.parentElement.querySelector(`.selected_bg_custom[data-target="${targetClass}"]`);
+
+    if (!existingBg) {
+        // Создаём новый элемент, если его нет
+        existingBg = document.createElement('img');
+        existingBg.classList.add('selected_bg_custom');
+        existingBg.setAttribute('data-target', targetClass);
+        target.parentElement.appendChild(existingBg);
+    }
+
+    // Определяем размер и позицию в зависимости от рамки
+    let bgWidth = 90, bgHeight = 90, offsetX = 0, offsetY = 0;
+
+    if (targetClass === 'ban_img_3') {
+        // Уменьшаем картинку для третьей рамки
+        bgWidth = 70;
+        bgHeight = 70;
+        offsetX = 29;  // Смещаем правее
+        offsetY = 30;  // Смещаем ниже
+    }
+
+    existingBg.src = imgUrl;
+    existingBg.style.width = `${bgWidth}px`;
+    existingBg.style.height = `${bgHeight}px`;
+    existingBg.style.position = 'absolute';
+    existingBg.style.left = (target.offsetLeft + 2 + offsetX) + 'px';
+    existingBg.style.top = (target.offsetTop + 2 + offsetY) + 'px';
+
+    document.getElementById('image_dropdown_custom2').style.display = 'none';
+}
+
+document.addEventListener('click', function(event) {
+    if (!event.target.matches('.ban_img_1, .ban_img_2, .ban_img_3, .dropdown_img_custom')) {
+        document.getElementById('image_dropdown_custom2').style.display = 'none';
+    }
+});
+</script>
+
+    <h2>Полученные данные</h2>
+
+    <p><strong>Текст:</strong> <span id="textOutput"></span></p>
+    <p><strong>Выбранный вариант:</strong> <span id="selectOutput"></span></p>
+    <p><strong>Изображение:</strong></p>
+    <img id="imageOutput" style="max-width: 300px; display: none;">
+
+    <!-- Контейнер для полученных изображений -->
+    <div id="imagesContainer" style="position: relative; width: 100%; height: 500px;"></div>
+
+<script>
+// Подключаемся к серверу по WebSocket через Socket.IO
+const socket = io.connect("http://127.0.0.1:5000");
+
+// Ожидаем событие "receive_data" от сервера
+socket.on("receive_data", function(data) {
+    // Обновляем текстовое поле
+    document.getElementById("textOutput").innerText = data.text;
+
+    // Обновляем выпадающий список
+    document.getElementById("selectOutput").innerText = data.select;
+
+    // Проверяем, есть ли изображение
+    if (data.image) {
+        document.getElementById("imageOutput").src = data.image;  // Устанавливаем изображение
+        document.getElementById("imageOutput").style.display = "block";  // Показываем его
+    } else {
+        document.getElementById("imageOutput").style.display = "none";  // Если изображения нет, скрываем элемент
+    }
+});
+
+// Получаем изображения (собираем их и отображаем на экране)
+socket.on("receive_images", function(images) {
+    console.log("Получены изображения:", images);
+
+    // Удаляем старые изображения
+    document.querySelectorAll(".selected_bg_custom").forEach(img => img.remove());
+
+    // Добавляем новые изображения
+    images.forEach(data => {
+        let img = document.createElement("img");
+        img.classList.add("selected_bg_custom");
+        img.src = data.src;
+        img.style.position = "absolute";
+        img.style.left = data.left;
+        img.style.top = data.top;
+        img.style.width = data.width;
+        img.style.height = data.height;
+
+        document.body.appendChild(img);
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

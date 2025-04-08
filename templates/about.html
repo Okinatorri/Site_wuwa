@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Pravil.css') }}" />
+<link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='setka.css') }}" />
+
+
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='about.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+                 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <title>Mogo</title>
+</head>
+
+<body>
+
+
+
+  <div class="intro">
+
+
+     <img src="{{ url_for('static', filename='image/background main.png') }}" alt="Фоновое изображение" class="bg" />
+         <img src="{{ url_for('static', filename='image//Black-T line top.png') }}" alt="Фоновое изображение" class="gena" />
+
+         <img src="{{ url_for('static', filename='image//tg.png') }}" alt="Фоновое изображение" class="tg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1 class="white-text2">Wuthering</h1>
+    <h1 class="white-text22">Waves</h1>
+
+
+    <div class="centered-links1">
+        <nav class="panelll">
+            <ul>
+              <li><a onclick="window.location.href='/'">About</a></li>
+                <li><a onclick="window.location.href='/regist'">Participate</a></li>
+                <li><a onclick="window.location.href='/pravil'">Rules</a></li>
+                <li><a onclick="window.location.href='/tablo'">Tournament Bracket</a></li>
+
+                    {% if session.get('status') in ["player", "admin"] %}
+                <li><a onclick="window.location.href='/regis_zap'">regis_zap</a></li>
+                    {% endif %}
+
+                            {% if session.get('status') =="admin" %}
+                <li><a onclick="window.location.href='/bans'">Bans</a></li>
+                    {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h1 class="you">Programmer</h1>
+    <h1 class="you2">@zymer44</h1>
+
+
+          <h1 class="whitt">Tempest CUP</h1>
+          <h1 class="whitt2">Призовой фонд</h1>
+          <h1 class="redd">150$</h1>
+
+
+
+
+    <p class="text4">
+        <span class="blue-white">Miroichii</span>
+            <img src="{{ url_for('static', filename='image//twich.png') }}" alt="Фоновое изображение" class="twich1" />
+        <span class="red-white">Maliwan</span>
+    </p>
+
+
+</div>
+<h1 class="lolPr3">
+    2 место - <span class="gradient-text">45$</span>
+</h1>
+
+<h1 class="lolPr">
+    1 место - <span class="gradient-text">75$</span>
+</h1>
+
+
+<h1 class="lolPr2">
+    3 место - <span class="gradient-text">35$</span>
+</h1>
+
+</body>
+</html>
